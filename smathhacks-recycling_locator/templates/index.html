@@ -1,0 +1,63 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recycling Locator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"
+    </head>
+    <body>
+        <form action='/' method="GET">
+            <label for="location">Enter a city</label>
+            <input type="text" id="location" name="location"class="location-input"><br>
+            <input type="submit" value="Search" class="submit-button" button style="background-color: #4CAF50; /* Green background */
+            border: none;
+            color: white; /* White text */
+            padding: 10px 20px; /* Increased padding for bigger size */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Display as inline block */
+            font-size: 12px; /* Increased font size */
+            margin: 10px auto; /* Center horizontally with margin */
+            transition-duration: 0.4s; /* Transition duration */
+            cursor: pointer; /* Cursor pointer */">
+            
+        </form>
+
+        <div class="button-container">
+            <a href="/info" style="text-decoration: none;">
+                <button style="background-color: #4CAF50; /* Green background */
+                                border: none;
+                                color: white; /* White text */
+                                padding: 10px 20px; /* Increased padding for bigger size */
+                                text-align: center; /* Center text */
+                                text-decoration: none; /* Remove underline */
+                                display: inline-block; /* Display as inline block */
+                                font-size: 12px; /* Increased font size */
+                                margin: 10px auto; /* Center horizontally with margin */
+                                transition-duration: 0.4s; /* Transition duration */
+                                cursor: pointer; /* Cursor pointer */">
+                    About Recycling
+                </button>
+            </a>
+            
+        </div>
+        
+
+        {% if locations %}    
+            <h1>Nearby Locations</h1>
+            <ul class="locations-list">
+                {% for location in locations %}
+                    <li class="location-item">
+                        <strong>Title:</strong> {{ location.Title }} <br>
+                        <strong>Address:</strong> {{ location.Address }} <br>
+                        <strong>Rating:</strong> {{ location.rating }} <br>
+                        <strong>Service Options:</strong> {{ location.Service_options }}<br>
+                        <strong>Phone Number:</strong> {{ location.phone }}<br>
+                        </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+    </body>
+    </html>

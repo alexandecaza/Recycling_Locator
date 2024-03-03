@@ -1,0 +1,32 @@
+.search-form {
+    margin-bottom: 20px;
+}
+body {
+    background-color: lightblue;
+}
+.location-input {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.submit-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.locations-list {
+    list-style: none;
+    padding: 0;
+}
+
+.location-item {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
